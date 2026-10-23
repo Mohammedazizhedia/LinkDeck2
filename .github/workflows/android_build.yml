@@ -24,6 +24,10 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
 
+      # هذه الخطوة تقوم بتوليد gradlew تلقائياً على خادم جيت هب
+      - name: Generate Gradle Wrapper
+        run: gradle wrapper --gradle-version 8.9
+
       - name: Make Wrapper Executable
         run: chmod +x gradlew
 
